@@ -1,0 +1,32 @@
+# API & Web
+fastapi
+uvicorn
+requests
+python-dotenv
+
+# Streamlit frontend
+streamlit
+
+# arXiv
+arxiv
+
+# Embeddings & Vector Search
+sentence-transformers
+faiss-cpu
+
+# Reranking
+scikit-learn
+rank-bm25
+
+# Visualizations
+matplotlib
+seaborn
+
+# LLMs
+transformers
+torch
+groq
+huggingface-hub
+
+# Utilities
+numpy
