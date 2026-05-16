@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment Variables (NEVER commit this)
+.env
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/secrets.toml
