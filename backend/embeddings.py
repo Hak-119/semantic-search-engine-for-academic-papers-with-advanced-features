@@ -3,12 +3,16 @@ backend/embeddings.py
 Converts paper text into semantic vectors and builds FAISS index.
 Uses cosine similarity throughout (IndexFlatIP + normalized vectors).
 """
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 import numpy as np
 import faiss
+faiss.omp_set_num_threads(1)
+
 from sentence_transformers import SentenceTransformer
 from typing import List, Tuple
-import os
+
 
 #Model name as a constant - easy to upgrade later
 EMBEDDING_MODEL = "all-mpnet-base-v2"
