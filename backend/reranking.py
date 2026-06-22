@@ -9,10 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from rank_bm25 import BM25Okapi
 from typing import List, Tuple
 
-
-# ============================================================
-# 1. MMR — Maximal Marginal Relevance
-# ============================================================
+#MMR — Maximal Marginal Relevance
 
 def mmr_rerank(
     query_embedding: np.ndarray,
@@ -59,9 +56,7 @@ def mmr_rerank(
     return [candidate_indices[i] for i in selected_local]
 
 
-# ============================================================
-# 2. BM25 — Keyword-based Sparse Retrieval
-# ============================================================
+#BM25 — Keyword-based Sparse Retrieval
 
 def bm25_rerank(
     query: str,
@@ -84,9 +79,7 @@ def bm25_rerank(
     return [(int(idx), float(scores[idx])) for idx in top_indices]
 
 
-# ============================================================
-# 3. Hybrid Search — Reciprocal Rank Fusion (Dense + Sparse)
-# ============================================================
+#Hybrid Search — Reciprocal Rank Fusion (Dense + Sparse)
 
 def reciprocal_rank_fusion(
     rankings: List[List[int]],
@@ -149,9 +142,7 @@ def hybrid_search(
     return reciprocal_rank_fusion([dense_ranking, sparse_ranking], top_n=top_n)
 
 
-# ============================================================
-# 4. Sort by Date
-# ============================================================
+#Sort by Date
 
 def sort_papers_by_date(papers: List[dict], order: str = "Latest") -> List[dict]:
     """Sort papers list by published date. order: 'Latest', 'Oldest', or 'Relevance'."""
